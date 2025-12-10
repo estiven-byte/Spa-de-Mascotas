@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minisistema de Gestión para Spa de Mascotas</title>
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="logoContainer">
+        <img src="img/logo.png" id="logoSpa" alt="Logo del Spa de Mascotas">
+    </div>
+
+  <section id="loginArea" class="visible">
+    <h2>Iniciar Sesión</h2>
+
+    <form id="loginForm">
+      <label>Usuario:
+        <input type="text" id="loginUsuario" required>
+      </label>
+
+      <label>Contraseña:
+        <input type="password" id="loginClave" required>
+      </label>
+
+      <button type="submit">Ingresar</button>
+      <p id="loginMensaje"></p>
+    </form>
+  </section>
+
+
+  <section id="sistemaArea" class="oculto">
+
+    <nav>
+      <button class="btnMenu" data-seccion="seccionRegistro">Registro</button>
+      <button class="btnMenu" data-seccion="seccionAgenda">Agenda</button>
+      <button class="btnMenu" data-seccion="seccionCarrito">Carrito</button>
+      <button id="btnSalir">Cerrar Sesión</button>
+    </nav>
+
+
+    <div class="seccion" id="seccionRegistro">
+
+      <h2>Datos del Dueño</h2>
+      <form id="formDueno">
+        <label>Nombre:
+          <input type="text" id="duenoNombre" required>
+        </label>
+        <label>Celular:
+          <input type="text" id="duenoTelefono" maxlength="8" required>
+        </label>
+        <label>Email:
+          <input type="email" id="duenoCorreo" required>
+        </label>
+        <button type="submit">Guardar Dueño</button>
+      </form>
+
+      <h2>Datos de la Mascota</h2>
+      <form id="formMascota">
+        <label>Nombre:
+          <input type="text" id="mascotaNombre" required>
+        </label>
+        <label>Especie:
+          <input type="text" id="mascotaEspecie" required>
+        </label>
+        <label>Raza:
+          <input type="text" id="mascotaRaza" required>
+        </label>
+        <button type="submit">Guardar Mascota</button>
+      </form>
+
+      <p id="mensajeRegistro"></p>
+    </div>
+
+
+    <div class="seccion oculto" id="seccionAgenda">
+      <h2>Agenda de Servicios</h2>
+
+      <form id="formAgenda">
+        <label>Fecha:
+          <input type="date" id="agendaFecha">
+        </label>
+        <label>Hora:
+          <input type="time" id="agendaHora">
+        </label>
+        <label>Mascota:
+          <input type="text" id="agendaMascota">
+        </label>
+        <label>Servicio:
+          <input type="text" id="agendaServicio">
+        </label>
+
+        <button type="submit">Agendar</button>
+      </form>
+
+      <p id="mensajeAgenda"></p>
+    </div>
+
+
+    <div class="seccion oculto" id="seccionCarrito">
+      <h2>Catálogo de Servicios</h2>
+
+      <div id="listaServicios"></div>
+
+      <h2>Carrito</h2>
+      <ul id="listaCarrito"></ul>
+
+      <p>Subtotal: <span id="subtotal">0</span> Bs</p>
+      <p>Total (IVA 13%): <span id="total">0</span> Bs</p>
+    </div>
+  </section>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
+
